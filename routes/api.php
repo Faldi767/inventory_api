@@ -16,3 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('role', 'RoleController@index');
+Route::post('role', 'RoleController@store');
+Route::put('/role/{id}', 'RoleController@update');
+Route::delete('/role/{id}', 'RoleController@delete');
+Route::get('/role/trash', 'RoleController@trash');
+Route::get('/role/restore/{id}', 'RoleController@restore');
+Route::get('/role/restoreall', 'RoleController@restoreall');
+Route::delete('/role/hapuspermanen/{id}', 'RoleController@hapuspermanen');
+Route::delete('/role/hapusall', 'RoleController@hapusall');
